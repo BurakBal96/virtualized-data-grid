@@ -48,7 +48,7 @@ export const Home = (props) => {
     return (
         <div className={styles.homePage}>
             {loading && (
-                <ContainerLoader containerRef={pageRef} text={`Creating ${ITEM_COUNT} items for list, this might take some time`} />
+                <ContainerLoader containerRef={pageRef} text={`Generating ${ITEM_COUNT} items for list, this might take some time`} />
             )}
             <div className={styles.container} ref={pageRef}>
                 {!loading && (

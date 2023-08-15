@@ -137,7 +137,7 @@ const Inner = inject("TableStore")(
         <div
           className={styles.dataGrid}
           style={{
-            height: style.height + headerHeight,
+            height: TableStore.totalHeight + headerHeight,
             "--header-height-unit": headerHeight,
           }}
         >
