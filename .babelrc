@@ -1,0 +1,13 @@
+{
+    "plugins": [
+        [
+            "prismjs",
+            {
+                "languages": ["javascript", "css", "markup", "bash"],
+                "plugins": ["toolbar", "copy-to-clipboard", "line-numbers", "autolinker"],
+                "theme": "tomorrow",
+                "css": true
+            }
+        ]
+    ]
+}

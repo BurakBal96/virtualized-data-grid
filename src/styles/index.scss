@@ -1,0 +1,13 @@
+@use './variables';
+@use './common';
+
+body{
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#root{
+  overflow: auto;
+}

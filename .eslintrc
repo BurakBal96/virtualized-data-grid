@@ -1,0 +1,80 @@
+{
+    "parser": "@babel/eslint-parser",
+    "plugins": ["react"],
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true
+    },
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "no-console": [
+            "warn",
+            {
+                "allow": ["warn", "error", "trace"]
+            }
+        ],
+        "react/jsx-key": "error",
+        "react/jsx-uses-react": "warn",
+        "react/jsx-uses-vars": "warn",
+        "react/prop-types": "off",
+        "react/display-name": "off",
+        "no-multi-spaces": "warn",
+        "no-dupe-else-if": "error",
+        "no-empty-function": "warn",
+        "no-multiple-empty-lines": [
+            "warn",
+            {
+                "max": 1,
+                "maxEOF": 1
+            }
+        ],
+        "no-unused-vars": [
+            "warn",
+            {
+                "vars": "all",
+                "varsIgnorePattern": "^_",
+                "args": "after-used",
+                "argsIgnorePattern": "^_"
+            }
+        ],
+        "react/no-deprecated": "warn",
+        "quotes": ["warn", "single", { "avoidEscape": true }],
+        "jsx-quotes": ["warn", "prefer-single"],
+        "comma-dangle": ["warn", "never"],
+        "semi": ["warn", "always"],
+        "max-len": [
+            "warn",
+            {
+                "code": 160
+            }
+        ]
+    },
+    "overrides": [
+        {
+            "files": ["src/serviceWorker.js"],
+            "env": {
+                "node": true
+            }
+        },
+        {
+            "files": ["src/Pages/Resume/Sections/Experience.js"],
+            "rules":{
+                "max-len": [
+                    "off"
+                ]
+            }
+        }
+    ]
+}

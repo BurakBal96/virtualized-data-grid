@@ -1,0 +1,44 @@
+@use 'sass:color';
+@use 'sass:map';
+@use 'sass:list';
+
+$_bg: (#1f1e1e, #333232, #252525, #1a1a1a, #1f1f1f, #1d1d1d, #f0f0f0);
+$bg: list.nth($_bg, 2);
+
+$_nd: (#ffce65, 10%), (#aa9f68, 5%), (#ffe7a3, -5%), (#b78742, 10%);
+$nd: list.nth($_nd, 4);
+
+$colorSet1: (
+    'background': $bg,
+    'primary': color.adjust($bg, $lightness: 80%),
+    'secondary': color.adjust(list.nth($nd, 1), $lightness: list.nth($nd, 2))
+);
+
+$colorsSet2: (
+    'header': color.adjust(map.get($colorSet1, 'background'), $lightness: 3%),
+    'tertiary': map.get($colorSet1, 'secondary'),
+    'primary-border': color.adjust($bg, $lightness: 50%)
+);
+
+$colors: map.merge($colorSet1, $colorsSet2);
+
+:root {
+    //map.set($colors, 'header', color.adjust(#181818, $lightness: 5%))
+
+    @each $color, $value in $colors {
+        --#{$color}-color: #{$value};
+        --#{$color}-color-rgb: #{red($value)}, #{green($value)}, #{blue($value)};
+    }
+
+    --hover-opacity: 0.1;
+
+    //--primary-border-color: #9dbeb9;
+    --primary-border: 1px solid var(--primary-border-color);
+
+    --background-color: rgb(var(--background-color-rgb));
+
+    --default-padding: 10px 20px;
+
+    --non-printable-height: 30px;
+    --header-height-coefficient: 1.8;
+}

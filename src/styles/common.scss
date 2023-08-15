@@ -1,0 +1,91 @@
+html {
+    font-size: 110%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+    padding: 0;
+    margin: 0;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mb-2 {
+    margin-bottom: 2px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.sticky {
+    position: sticky;
+    top: calc(var(--non-printable-height) * var(--header-height-coefficient));
+}
+
+.only-print {
+    display: none;
+}
+
+@media print {
+    :root {
+        --primary-color: #000;
+        --primary-color-rgb: 0, 0, 0;
+    }
+    * {
+        font-size: 100%;
+    }
+
+    .small-text-on-print {
+        font-size: 80% !important;
+    }
+
+    .sticky {
+        position: static;
+        top: 0;
+    }
+
+    .no-print,
+    .no-print * {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    .only-print,
+    .only-print * {
+        display: initial;
+    }
+}
+
+a,
+a:visited {
+    color: rgb(158, 158, 255);
+}
+
+//prism code toolbar
+details + details {
+    margin-top: 20px;
+}
+hr {
+    border-color: var(--primary-color);
+}
+
+@page {
+    size: auto;   /* auto is the initial value */
+    margin: 0;  /* this affects the margin in the printer settings */
+}
